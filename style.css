@@ -8,11 +8,22 @@ title {
   align-items: center;
   direction: row;
 }
-h1 {
+h1,a {
   font-size: 20px;
 }
 
 search {
   align-items: center;
   direction: row;
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  border: 2px #fff solid;
+  border-radius: 0.7rem;
+}
+button:hover {
+  background-color: #fff;
+  color: #181818;
 }

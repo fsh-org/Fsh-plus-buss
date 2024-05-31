@@ -1,16 +1,8 @@
-local api = 'http://eu2.host.hitbyathunder.xyz:20420/search?q='
-
-function search()
+get('text').on_submit(function(content)
   local res = fetch({
-    url = api .. get("text").get_content(),
+    url = 'http://eu2.host.hitbyathunder.xyz:20420/search?q=' .. content,
     method = "GET"
   })
+  print(content)
   get("results").set_content(res)
-end
-
-get("text").on_submit(function()
-    search()
-end)
-get("search").on_click(function()
-    search()
 end)

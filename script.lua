@@ -5,6 +5,7 @@ function search()
     url = api .. get("text").get_content(),
     method = "GET"
   })
+  get("results").set_content(res)
 end
 
 get("text").on_submit(function()

@@ -1,10 +1,20 @@
-get("results").set_content('test')
---get('text').on_submit(function(content)
---  get("results").set_content('search')
---  local res = fetch({
---    url = 'http://eu2.host.hitbyathunder.xyz:20420/search?q=' .. content,
---    method = "GET"
---  })
---  print(content)
---  get("results").set_content(res)
---end)
+get("results").set_opacity(0)
+
+get('text').on_submit(function(content)
+  local favicon = get('favicon', true)
+  local url = get('url', true)
+  local title = get('title', true)
+  local desc = get('desc', true)
+  get("status").set_content('searching...')
+  local res = fetch({
+    url = 'https://api.fsh.plus/html?url=http://eu2.host.hitbyathunder.xyz:20420/search?q=' .. content,
+    method = "GET"
+  })
+  get("status").set_content(content.length .. ' results')
+  for k, v in res do
+    favicon[k].set_source(v['favicon'])
+    url[k].set_href('buss://' .. v['url'])
+    title[k].set_content(v['title'])
+    desc[k].set_content(v['desc'])
+  end
+end)

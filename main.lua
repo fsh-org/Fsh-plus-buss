@@ -10,6 +10,7 @@ get('text').on_submit(function(content)
     url = 'https://api.fsh.plus/images/data/dingle.json',
     method = "GET"
   })
+  get("status").set_content('loaded')
   get("status").set_content(#res .. ' results')
 --  for k, v in res do
 --    favicon[k].set_source(v['favicon'])

@@ -7,14 +7,14 @@ get('text').on_submit(function(content)
   local desc = get('desc', true)
   get("status").set_content('searching...')
   local res = fetch({
-    url = 'https://api.fsh.plus/html?url=http://eu2.host.hitbyathunder.xyz:20420/search?q=' .. content,
+    url = 'https://api.fsh.plus/images/data/dingle.json',
     method = "GET"
   })
-  get("status").set_content(content.length .. ' results')
-  for k, v in res do
-    favicon[k].set_source(v['favicon'])
-    url[k].set_href('buss://' .. v['url'])
-    title[k].set_content(v['title'])
-    desc[k].set_content(v['desc'])
-  end
+  get("status").set_content(#res .. ' results')
+--  for k, v in res do
+--    favicon[k].set_source(v['favicon'])
+--    url[k].set_href('buss://' .. v['url'])
+--    title[k].set_content(v['title'])
+--    desc[k].set_content(v['desc'])
+--  end
 end)

@@ -8,7 +8,9 @@ get('text').on_submit(function(content)
   get("status").set_content('searching...')
   local res = fetch({
     url = 'https://api.fsh.plus/images/data/dingle.json',
-    method = "GET"
+    method = "GET",
+    headers = { ["Content-Type"] = "text/plain" },
+    body = 'Text'
   })
   get("status").set_content('loaded')
   get("status").set_content(#res .. ' results')

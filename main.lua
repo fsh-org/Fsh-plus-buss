@@ -5,6 +5,7 @@ get('text').on_submit(function(content)
   local title = get('title', true)
   local desc = get('desc', true)
   get("status").set_content('searching...')
+  get("results").set_opacity(0)
   local res = fetch({
     url = 'https://api.fsh.plus/buss?q='..content,
     method = "GET",
@@ -19,4 +20,5 @@ get('text').on_submit(function(content)
     title[k].set_content(v['title'])
     desc[k].set_content(v['text'])
   end
+  get("results").set_opacity(1)
 end)

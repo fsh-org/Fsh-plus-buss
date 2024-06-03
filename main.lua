@@ -14,7 +14,7 @@ get('text').on_submit(function(content)
   })
   get("status").set_content('loaded')
   get("status").set_content(#res .. ' results')
-  for k, v in res do
+  for k, v in pairs(res) do
     favicon[k].set_source(v['favicon'])
     url[k].set_href('buss://' .. v['url'])
     title[k].set_content(v['title'])

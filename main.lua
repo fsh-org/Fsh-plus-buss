@@ -1,7 +1,6 @@
 get("results").set_opacity(0)
 
 get('text').on_submit(function(content)
-  print('search')
   local url = get('url', true)
   local title = get('title', true)
   local desc = get('desc', true)

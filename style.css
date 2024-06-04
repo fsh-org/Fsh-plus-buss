@@ -4,7 +4,7 @@ body {
   background-color: #181818;
 }
 
-title {
+tt {
   align-items: center;
   direction: row;
 }

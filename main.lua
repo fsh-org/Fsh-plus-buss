@@ -15,13 +15,11 @@ get('text').on_submit(function(content)
   })
   get("status").set_content('loaded')
   get("status").set_content(#res .. ' results')
-  print('search')
+  get("results").set_opacity(1)
   for k = 1, #res do
     local v = res[k]
-    favicon[k].set_source(v['favicon'])
     url[k].set_href('buss://' .. v['url'])
     title[k].set_content(v['title'])
     desc[k].set_content(v['text'])
   end
-  get("results").set_opacity(1)
 end)

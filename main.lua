@@ -17,6 +17,7 @@ get('text').on_submit(function(content)
   get("results").set_opacity(1)
   for k = 1, #res do
     local v = res[k]
+    print(link)
     link[k].set_href('buss://' .. v['url'])
     title[k].set_content(v['title'])
     desc[k].set_content(v['text'])

@@ -1,7 +1,8 @@
 get("results").set_opacity(0)
 
 get('text').on_submit(function(content)
-  local link = get('link', true)
+  local link = get('a', true)
+  table.remove(link, 1);
   local title = get('title', true)
   local desc = get('desc', true)
   get("status").set_content('searching...')

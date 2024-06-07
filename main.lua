@@ -1,10 +1,12 @@
 get("results").set_opacity(0)
+local link = get('link', true)
+print(link)
+table.remove(link, 1);
+print(link)
+local title = get('title', true)
+local desc = get('desc', true)
 
 get('text').on_submit(function(content)
-  local link = get('a', true)
-  table.remove(link, 1);
-  local title = get('title', true)
-  local desc = get('desc', true)
   get("status").set_content('searching...')
   get("results").set_opacity(0)
   local res = fetch({

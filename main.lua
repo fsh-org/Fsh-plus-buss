@@ -2,9 +2,10 @@ get("results").set_opacity(0)
 local link = get('link', true)
 print(link)
 table.remove(link, 1);
-print(link)
 local title = get('title', true)
+print(title)
 local desc = get('desc', true)
+print(desc)
 
 get('text').on_submit(function(content)
   get("status").set_content('searching...')

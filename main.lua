@@ -1,5 +1,6 @@
 get("results").set_opacity(0)
 local title = get('title', true)
+print(title)
 local desc = get('desc', true)
 
 get('text').on_submit(function(content)

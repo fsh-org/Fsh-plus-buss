@@ -1,11 +1,6 @@
 get("results").set_opacity(0)
-local link = get('li', true)
-print(link)
-table.remove(link, 1);
-local title = get('ti', true)
-print(title)
+local title = get('title', true)
 local desc = get('desc', true)
-print(desc)
 
 get('text').on_submit(function(content)
   get("status").set_content('searching...')
@@ -22,8 +17,8 @@ get('text').on_submit(function(content)
   for k = 1, #res do
     local v = res[k]
     print(link)
-    link[k].set_href('buss://' .. v['url'])
-    title[k].set_content(v['title'])
+    title[k].set_href('buss://' .. v['url'])
+    title[k].set_content(v['title'] .. v['url'])
     desc[k].set_content(v['text'])
   end
 end)

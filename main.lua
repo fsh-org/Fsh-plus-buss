@@ -1,8 +1,8 @@
 get("results").set_opacity(0)
-local link = get('link', true)
+local link = get('li', true)
 print(link)
 table.remove(link, 1);
-local title = get('title', true)
+local title = get('ti', true)
 print(title)
 local desc = get('desc', true)
 print(desc)

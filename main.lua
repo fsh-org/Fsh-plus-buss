@@ -17,7 +17,7 @@ get('text').on_submit(function(content)
   for k = 1, #res do
     local v = res[k]
     --title[k].set_href('buss://' .. v['url'])
-    title[k].set_content(v['title'] .. v['url'])
-    desc[k].set_content(v['desc'])
+    title[k].set_content(string.sub(v['title'], 1, 20) .. ' - buss://' .. v['url'])
+    desc[k].set_content(string.sub(v['desc'], 1, 50))
   end
 end)

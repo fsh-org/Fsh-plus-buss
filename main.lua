@@ -18,7 +18,7 @@ get('text').on_submit(function(content)
   get("status").set_content('loaded')
   get("status").set_content(#res .. ' results')
   get("results").set_opacity(1)
-  for k = 1, #res do
+  for k = 1, math.min(#res, 10) do
     local v = res[k]
     --title[k].set_href('buss://' .. v['url'])
     title[k].set_content((v['quality'] and "⭐ " or "") .. cut(v['title'], 20) .. ' - buss://' .. v['url'])

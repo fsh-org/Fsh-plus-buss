@@ -18,8 +18,12 @@ get('text').on_submit(function(content)
   get("status").set_content('loaded')
   get("status").set_content('showing ' .. math.min(#res, 20) .. ' of ' .. #res .. ' results')
   get("results").set_opacity(1)
-  for k = 1, math.min(#res, 20) do
-    local v = res[k]
+  for k = 1, 20 do
+    local v = {}
+    if (#res < k)
+      v = {}
+    else
+      v = res[k]
     --title[k].set_href('buss://' .. v['url'])
     title[k].set_content((v['quality'] and "⭐ " or "") .. cut(v['title'], 20) .. ' - buss://' .. v['url'])
     desc[k].set_content(cut(v['desc'], 80))

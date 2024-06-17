@@ -17,9 +17,11 @@ text {
 }
 
 results {
+  gap: 5px;
   direction: column;
 }
 
 result {
+  direction: column;
   background-color: #333333;
 }

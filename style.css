@@ -16,6 +16,10 @@ text {
   align-items: center;
 }
 
+results {
+  direction: column;
+}
+
 result {
   background-color: #333333;
 }

@@ -20,10 +20,11 @@ get('text').on_submit(function(content)
   get("results").set_opacity(1)
   for k = 1, 20 do
     local v = {}
-    if (#res < k)
+    if #res < k then
       v = {}
     else
       v = res[k]
+    end
     --title[k].set_href('buss://' .. v['url'])
     title[k].set_content((v['quality'] and "⭐ " or "") .. cut(v['title'], 20) .. ' - buss://' .. v['url'])
     desc[k].set_content(cut(v['desc'], 80))

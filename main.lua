@@ -16,7 +16,7 @@ get('text').on_submit(function(content)
     body = 'Text'
   })
   get("status").set_content('loaded')
-  get("status").set_content(#res .. ' results')
+  get("status").set_content('showing ' .. math.min(#res, 20) .. ' of ' .. #res .. ' results')
   get("results").set_opacity(1)
   for k = 1, math.min(#res, 10) do
     local v = res[k]

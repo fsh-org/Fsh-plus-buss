@@ -2,6 +2,10 @@ get("results").set_opacity(0)
 local title = get('title', true)
 local desc = get('desc', true)
 
+function cut(s, l)
+  return string.sub(s, 1, l) .. ((string.sub(s, 1, l) ~= s) and "..." or "")
+end
+
 get('text').on_submit(function(content)
   get("status").set_content('searching...')
   get("results").set_opacity(0)
@@ -17,7 +21,7 @@ get('text').on_submit(function(content)
   for k = 1, #res do
     local v = res[k]
     --title[k].set_href('buss://' .. v['url'])
-    title[k].set_content(string.sub(v['title'], 1, 20) .. ' - buss://' .. v['url'])
-    desc[k].set_content(string.sub(v['desc'], 1, 50))
+    title[k].set_content(cut(v['title'], 20) .. ' - buss://' .. v['url'])
+    desc[k].set_content(cut(v['desc'], 80))
   end
 end)
